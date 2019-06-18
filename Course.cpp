@@ -1,9 +1,9 @@
 #include "Course.h"
 
 //Course default constructor
-Course::Course()
-{
-}
+		//Course::Course()
+			//{
+				//}
 // "Course" class REGULAR constractor implementation: NOT SURE ABOUT exam_grade INITIALIZATION - shouldn't be part of the constructor
 Course::Course(int course_num_, string course_name_, int hw_tot_num_, float hw_weigh_) {
 
@@ -60,6 +60,7 @@ Course::~Course() {
 
 
 // "Course" class assignment operator implementation:
+//AR: why "&" and *this ? 
 Course& Course::operator=(const Course& rhs) {
 
 	if (this != &rhs) {

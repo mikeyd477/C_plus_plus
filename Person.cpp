@@ -6,6 +6,8 @@ Person::Person(int person_ID_, string person_name_) {
 	person_name = person_name_;
 };
 
+Person::~Person() {};
+
 int Person::getID() {
 	return person_ID;
 };
