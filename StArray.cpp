@@ -25,11 +25,11 @@ int StArray::addStudent(int student_ID, string student_name) {
 
 int StArray::addEE_Course(int student_ID, int course_num, string course_name, int hw_num, float hw_weight) {
 
-	EE_Course new_EE_Course(course_num, course_name, hw_num, hw_weight);
+	EE_Course* New_Course_Ptr  = new EE_Course(course_num, course_name, hw_num, hw_weight);
 	for (int i = 0; i < MAX_STUDENT_NUM; i++) {
 		if (stu_array[i] != NULL) {
 			if ((stu_array[i]->getID()) == student_ID) {
-				stu_array[i]->addEE_Course(&new_EE_Course);
+				stu_array[i]->addEE_Course(New_Course_Ptr);
 				return 1;
 			}
 		}
@@ -39,11 +39,11 @@ int StArray::addEE_Course(int student_ID, int course_num, string course_name, in
 
 int StArray::addCS_Course(int student_ID, int course_num, string course_name, int hw_num, float hw_weight, int hw_flag, string bookname) {
 
-	CS_Course new_CS_Course(course_num, course_name, hw_num, hw_weight, hw_flag, bookname);
+	CS_Course*  new_CS_Course_Ptr = new CS_Course(course_num, course_name, hw_num, hw_weight, hw_flag, bookname);
 	for (int i = 0; i < MAX_STUDENT_NUM; i++) {
 		if (stu_array[i] != NULL) {
 			if ((stu_array[i]->getID()) == student_ID) {
-				stu_array[i]->addCS_Course(&new_CS_Course);
+				stu_array[i]->addCS_Course(new_CS_Course_Ptr);
 				return 1;
 			}
 		}
@@ -127,10 +127,10 @@ void StArray::printAll() {
 		}
 	}
 };
-
+//Have issue here with the reset function.
 void StArray::resetStArray() {
 	for (int i = 0; i < MAX_STUDENT_NUM; i++) {
-		delete stu_array[i];
+		delete (&(stu_array[i]));
 	}
 	delete[] stu_array;
 };
