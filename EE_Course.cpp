@@ -1,11 +1,9 @@
 #include "EE_Course.h"
 
 
-
+//Constructor
 EE_Course::EE_Course(int course_num_, string course_name_, int hw_tot_,float hw_weigh_) :
 	Course(course_num_,course_name_,hw_tot_,hw_weigh_), factor(0) {}
-
-
 
 /*EE_Course::EE_Course(int course_num_, string course_name_, int hw_tot_num_, float hw_weigh_, int factor_) {
 

@@ -1,13 +1,17 @@
 #include "StArray.h"
-
+//Constructor
 StArray::StArray() :stu_num(0) {
 
 	for (int i = 0; i < MAX_STUDENT_NUM; i++) {
 		stu_array[i] = NULL;
 	}
 };
-
-StArray::~StArray() {};
+//Destructor will have to free all the pointers in the array!
+StArray::~StArray() {
+	for (int i = 0; i < MAX_STUDENT_NUM; i++) {
+		delete stu_array[i];
+	}
+};
 
 int StArray::addStudent(int student_ID, string student_name) {
 
@@ -130,9 +134,8 @@ void StArray::printAll() {
 //Have issue here with the reset function.
 void StArray::resetStArray() {
 	for (int i = 0; i < MAX_STUDENT_NUM; i++) {
-		delete (&(stu_array[i]));
+		delete stu_array[i];
 	}
-	delete[] stu_array;
 };
 
 

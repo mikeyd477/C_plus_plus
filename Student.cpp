@@ -1,5 +1,5 @@
 #include "Student.h"
-
+//Constructor
 Student::Student(int person_ID, string person_name) :
 	Person(person_ID, person_name), ee_courses_num(0), cs_courses_num(0), ee_courses_index(0), cs_courses_index(0){
 	//Reset array to NULL's
@@ -9,6 +9,18 @@ Student::Student(int person_ID, string person_name) :
 
 	}
 };
+//Destructor
+Student::~Student() {
+	for (int i = 0; i < MAX_COURSE_NUM; i++) {
+		if (ee_courses[i] != NULL) {
+			delete ee_courses[i];
+		}
+		if (cs_courses[i] != NULL) {
+			delete cs_courses[i];
+		}
+	}
+};
+
 
 int Student::getCourseCnt() {
 
@@ -126,7 +138,11 @@ void Student::print() {
 
 	for (int i = 0; i < MAX_COURSE_NUM; i++) {
 		if (ee_courses[i] != NULL) {
-			cout << ee_courses[i]->getNum() << " " << (*(ee_courses[i]->getName())) << ": " << ee_courses[i]->getCourseGrade() << endl;
+			//save the copy address
+			string* name_temp_address = ee_courses[i]->getName();
+			cout << ee_courses[i]->getNum() << " " << (*name_temp_address) << ": " << ee_courses[i]->getCourseGrade() << endl;
+			//delete the copy address
+			delete name_temp_address;
 		}
 	}
 
@@ -136,7 +152,11 @@ void Student::print() {
 
 	for (int i = 0; i < MAX_COURSE_NUM; i++) {
 		if (cs_courses[i] != NULL) {
+			//save the copy address
+			string* name_temp_address = cs_courses[i]->getName();
 			cout << cs_courses[i]->getNum() << " " << (*(cs_courses[i]->getName())) << ": " << cs_courses[i]->getCourseGrade() << endl;
+			//delete the copy address
+			delete name_temp_address;
 		}
 	}
 	cout << "" << endl;

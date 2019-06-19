@@ -26,8 +26,10 @@ protected:
 	 int cs_courses_index;
 
 public:
-	
+	//constructor
 	Student(int person_ID, string person_name);
+	//destructor
+	~Student();
 	int getCourseCnt();
 	int addEE_Course(EE_CoursePtr EE_Course_new);
 	int addCS_Course(CS_CoursePtr CS_Course_new);
