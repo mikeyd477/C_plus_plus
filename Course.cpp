@@ -47,7 +47,7 @@ Course::Course(const Course& rhs) {
 	hw_tot_num = rhs.hw_tot_num;
 	hw_weigh = rhs.hw_weigh;
 	hw_grades_arr = createNewCopy(rhs.hw_grades_arr, rhs.hw_tot_num);
-	exam_grade = 0;
+	exam_grade = rhs.exam_grade;
 
 };
 

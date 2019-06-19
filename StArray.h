@@ -9,7 +9,7 @@ class StArray {
 
 protected:
 	
-	Student* stu_array[MAX_STUDENT_NUM];
+	Student* stu_array[MAX_STUDENT_NUM]; //array of students (not pointers)!
 	int stu_num;
 
 public:

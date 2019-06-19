@@ -126,7 +126,7 @@ void Student::print() {
 
 	for (int i = 0; i < MAX_COURSE_NUM; i++) {
 		if (ee_courses[i] != NULL) {
-			cout << ee_courses[i]->getNum() << " " << ee_courses[i]->getName() << ": " << ee_courses[i]->getCourseGrade() << endl;
+			cout << ee_courses[i]->getNum() << " " << (*(ee_courses[i]->getName())) << ": " << ee_courses[i]->getCourseGrade() << endl;
 		}
 	}
 
@@ -136,7 +136,7 @@ void Student::print() {
 
 	for (int i = 0; i < MAX_COURSE_NUM; i++) {
 		if (cs_courses[i] != NULL) {
-			cout << cs_courses[i]->getNum() << " " << cs_courses[i]->getName() << ": " << cs_courses[i]->getCourseGrade() << endl;
+			cout << cs_courses[i]->getNum() << " " << (*(cs_courses[i]->getName())) << ": " << cs_courses[i]->getCourseGrade() << endl;
 		}
 	}
 	cout << "" << endl;

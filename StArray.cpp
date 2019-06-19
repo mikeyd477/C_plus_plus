@@ -11,10 +11,10 @@ StArray::~StArray() {};
 
 int StArray::addStudent(int student_ID, string student_name) {
 
-	Student new_student(student_ID, student_name);
+	Student* new_student_ptr = new Student(student_ID, student_name);
 	for (int i = 0; i < MAX_STUDENT_NUM; i++) {
 		if (stu_array[i] == NULL) {
-			stu_array[i] = &new_student;
+			stu_array[i] = new_student_ptr;
 			stu_num++;
 			return 1;
 		}
