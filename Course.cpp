@@ -7,9 +7,14 @@ Course::Course(int course_num_, string course_name_, int hw_tot_num_, float hw_w
 	course_name = course_name_;
 	hw_tot_num = hw_tot_num_;
 	hw_weigh = hw_weigh_;
-	hw_grades_arr = new int[hw_tot_num - 1];
-	for (int i = 0; i < hw_tot_num; i++) {
-		hw_grades_arr[i] = 0;
+	if (hw_tot_num_ != 0) {
+		hw_grades_arr = new int[hw_tot_num];
+		for (int i = 0; i < hw_tot_num; i++) {
+			hw_grades_arr[i] = 0;
+		}
+	}
+	else {
+		hw_grades_arr = NULL;
 	}
 	exam_grade = 0;
 

@@ -1,6 +1,6 @@
 #include "CS_Course.h"
 
-
+//Constructor
 CS_Course::CS_Course(int course_num_, string course_name_, int hw_tot_, float hw_weigh_,int hw_flag_,string bookname_) :
 	Course(course_num_, course_name_, hw_tot_, hw_weigh_), hw_flag(hw_flag_),bookname(bookname_) {}
 
